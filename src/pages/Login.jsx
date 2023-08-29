@@ -2,7 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import service from "../services/service.config";
 
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
+
 function Login() {
+
+  const { verifyToken } = useContext(AuthContext)
 
   const navigate = useNavigate()
 
@@ -30,6 +35,7 @@ function Login() {
       // almacenamos el token en el LocalStorage
       localStorage.setItem("authToken", response.data.authToken)
 
+      verifyToken()
 
       navigate("/private")
 
