@@ -2,6 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken")
+
+    // ! ...
+
+  }
+
   return (
     <div>
       
@@ -9,6 +17,7 @@ function Navbar() {
       <Link to="/signup">Registro</Link>
       <Link to="/login">Acceso</Link>
       <Link to="/private">Pagina privadas</Link>
+      <button onClick={handleLogout}>Cerrar Sesión</button>
 
     </div>
   )
