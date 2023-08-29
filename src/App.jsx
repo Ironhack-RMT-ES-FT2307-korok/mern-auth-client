@@ -8,6 +8,8 @@ import PrivateExample from './pages/PrivateExample'
 import Error from './pages/Error'
 import NotFound from './pages/NotFound'
 
+import IsPrivate from './components/IsPrivate'
+
 function App() {
 
   return (
@@ -20,7 +22,7 @@ function App() {
         <Route path="/" element={ <Home /> }/>
         <Route path="/login" element={ <Login /> }/>
         <Route path="/signup" element={ <Signup /> } />
-        <Route path="/private" element={ <PrivateExample /> } />
+        <Route path="/private" element={ <IsPrivate> <PrivateExample /> </IsPrivate> } />
 
         <Route path="/error" element={ <Error /> } />
         <Route path="*" element={ <NotFound/> } />
