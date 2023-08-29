@@ -35,7 +35,7 @@ function Login() {
       // almacenamos el token en el LocalStorage
       localStorage.setItem("authToken", response.data.authToken)
 
-      verifyToken()
+      await verifyToken()
 
       navigate("/private")
 

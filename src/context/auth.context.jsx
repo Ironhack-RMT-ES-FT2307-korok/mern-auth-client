@@ -3,7 +3,6 @@ import service from "../services/service.config";
 
 const AuthContext = createContext()
 
-
 function AuthWrapper(props) {
 
   // ...
@@ -14,11 +13,16 @@ function AuthWrapper(props) {
 
     try {
       
-      const response = await service("/auth/verify")
+      const response = await service.get("/auth/verify")
       console.log(response)
+
+      setIsUserActive(true)
+      setActiveUserId(response.data._id)
 
     } catch (error) {
       console.log(error)
+      setIsUserActive(false)
+      setActiveUserId(null)
     }
 
   }
