@@ -27,7 +27,7 @@ function AuthWrapper(props) {
       setIsUserActive(true)
       setActiveUserId(response.data._id)
       setIsPageLoading(false)
-
+        
     } catch (error) {
       console.log(error)
       setIsUserActive(false)
